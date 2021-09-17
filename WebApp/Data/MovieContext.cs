@@ -13,7 +13,6 @@ namespace WebApp.Data
             : base(options)
         {
         }
-
         public DbSet<WebApp.Models.Movie> Movie { get; set; }
     }
 }
