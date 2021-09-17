@@ -14,5 +14,7 @@ namespace WebApp.Data
         {
         }
         public DbSet<WebApp.Models.Movie> Movie { get; set; }
+        public DbSet<WebApp.Models.User> User { get; set; }
+        public DbSet<WebApp.Models.Product> Product { get; set; }
     }
 }

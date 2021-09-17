@@ -59,6 +59,68 @@ namespace WebApp.Models
                 );
                 context.SaveChanges();
             }
+
+            using (var context = new MovieContext(
+               serviceProvider.GetRequiredService<
+                   DbContextOptions<MovieContext>>()))
+            {
+                // Look for any movies.
+                if (context.User.Any())
+                {
+                    return;   // DB has been seeded
+                }
+
+                context.User.AddRange(
+                    new User
+                    {
+                        Name = "Elizabeth",
+                        IsComplete = true
+                    },
+
+                  new User
+                  {
+                      Name = "Elsa",
+                      IsComplete = false
+                  },
+
+                    new User
+                    {
+                        Name = "Albert",
+                        IsComplete = true
+                    },
+
+                   new User
+                   {
+                       Name = "Joe",
+                       IsComplete = false
+                   }
+                );
+                context.SaveChanges();
+            }
+
+            using (var context = new MovieContext(
+              serviceProvider.GetRequiredService<
+                  DbContextOptions<MovieContext>>()))
+            {
+                // Look for any movies.
+                if (context.Product.Any())
+                {
+                    return;   // DB has been seeded
+                }
+
+                context.Product.AddRange(
+                    new Product
+                    {
+                        Name = "Apple"
+                    },
+
+                  new Product
+                  {
+                      Name = "Banana"                 
+                  }                
+                );
+                context.SaveChanges();
+            }
         }
     }
 }
