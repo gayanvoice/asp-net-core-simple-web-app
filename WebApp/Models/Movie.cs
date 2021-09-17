@@ -12,8 +12,6 @@ namespace WebApp.Models
         [Display(Name = "Release Date")]
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
-
-        [Display(Name = "Movie Genre")]
         public string Genre { get; set; }
         [Column(TypeName = "decimal(18, 2)")]
         public decimal Price { get; set; }
